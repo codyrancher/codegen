@@ -1,0 +1,1 @@
+testing["kind","proto","deprecated","syntax","name","enums","messages","extensions","services","toString","getSyntaxComments","getPackageComments"]

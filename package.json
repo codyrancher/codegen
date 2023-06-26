@@ -1,0 +1,24 @@
+{
+  "name": "codegen",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "@bufbuild/buf": "^1.21.0-1",
+    "@bufbuild/protobuf": "^1.2.1",
+    "@bufbuild/protoc-gen-es": "^1.2.1",
+    "@bufbuild/protoplugin": "^1.2.1",
+    "protoc-gen-opni-services": "file:./protoc-gen-opni-services/"
+  },
+  "scripts": {
+    "clean": "rm -rf ./dist/*",
+    "build-plugin": "(cd ./protoc-gen-opni-services && yarn build)",
+    "install-plugin": "yarn install --force",
+    "dev-plugin": "yarn build-plugin && yarn install-plugin && echo \"\n\n\nGenerating...\n\" && npx buf generate proto",
+    "fix:prettier": "prettier --write ."
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "axios": "^1.4.0"
+  }
+}
